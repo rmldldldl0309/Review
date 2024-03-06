@@ -1,0 +1,26 @@
+.gitignore
+
+▶ 폴더 형상 관리 무시
+
+폴더이름/
+폴더이름
+
+ex) app/build > 앱 폴더 안에 있는 빌드만 무시
+
+▶ 파일 형상관리 무시
+
+파일명(확장자 같이 포함)
+
+ex) AppTest.java
+    test/java/aaa/AppTest.java
+
+▶ 특정 확장자 모두 무시
+
+*.확장자
+
+ex) *.properties
+
+▶ *활용한 무시
+
+ex) test/java/*/AppTest.java > test/java 경로 아래의 AppTest 파일 무시 (하나 아래)
+    test/java/**/AppTest.java > test/java 경로 아래의 AppTest 파일 무시 (모든)
