@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크 및 이미지 HTML 요소</title>
+</head>
+<body>
+    <!-- <a> : 하이퍼링크를 사용하기 위한 요소, herf 속성에 링크의 이동경로를 작성-->
+    <!-- HTML의 속성 값으로 문자열을 지정할 때 따옴표가 없어도 인식되지만 예기치 못한 문제가 발생할 수 있다 -->
+    <a href=https://naver.com>Naver</a>                                       
+    <a href="https://google.com">Google</a>
+
+    <!-- a요소의 href 속성 값으로 URL 주소 뿐만 아니라 파일명(로컬 파일 경로), HTML의 ID값도 올 수 있다 -->
+    <a href="./link_next.html">다음 페이지</a>
+    <!-- #으로 입력하는 값이 ID임을 명시, 클래스의 경우 .으로 명시 -->
+    <a href="#section1">Section1 으로 이동</a>
+    <div style="height: 1000px; background-color: rgba(0, 0, 0, 0.1);"></div>
+    <h1 id="section1">Section 1</h1>
+
+    <!-- <img> : 이미지를 페이지에 출력하기 위한 요소, src 속성으로 출력할 파일의 경로를 지정 -->
+    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMjhfNjYg%2FMDAxNjk4NDk5MDM0NDUw.jx3pi0FMCFZ-vd0zhkCNXwftx633gmoFAtSZBcSy7ikg.Mz-OOgRMZ4uXvRKZUymaSPKAN3owCt42VFwmaj0o5Gkg.JPEG.rlawlgus0726%2FIMG_7686.JPG&type=a340"/>
+    <img src="../resource/강아지.jpg"/>
+
+    <!-- 미디어 요소는 alt 속성에 설명을 작성하는 것을 권고-->
+    <img src="../resource/강아지.jpg" alt="귀여운 강아지 사진"/>
+</body>
+</html>
