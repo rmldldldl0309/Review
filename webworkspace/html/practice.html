@@ -1,47 +1,12 @@
-
-<!-- minmax(100px, auto) : 최소값 100 에서 무한정 늘어나도록 설정 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <div style="position: fixed;", class="header"></div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPL</title>
-    <style>
-        html,
-        head{
-            background-color: black;
-        }
-        body{
-            width: 100%;
-            height: 150%;
-        }
-        .container{
-            display: grid;
-            grid-template-columns: 100px minmax(100px, auto) 100px;
-            grid-template-rows: 20px 1fr 150px;
-            background-color: white;
-        }
-        .item:nth-child(1){
-            grid-column: 1/4;
-        }
-        .itemE{
-            display: grid;
-            grid-template-rows: 25px 1fr;
-        }
-    </style>
+    <title>Document</title>
 </head>
+
 <body>
-    <div class="container"> 
-        <div class="itemA">A</div>
-        <div class="itemB">B</div>
-        <div class="itemC">C</div>
-        <div class="itemD">D</div>
-        <div class="itemE">
-            <div class="itemE_1">1</div>
-            <div class="itemE_2">2</div>
-        </div>
-        <div class="itemF">F</div>
-    </div>
+    
 </body>
 </html>
