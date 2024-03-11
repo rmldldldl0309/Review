@@ -7,36 +7,40 @@
     <!-- 
 
         CSS (Cascading Style Sheet) :
-            - 
-            - 
-            - 
+            - HTML 이나 XML 같은 구조화 된 문서를 어떻게 렌더링할 것인지 선언하는 것
+            - HTML 의 각 요소의 스타일을 선언하여 화면에 어떻게 렌더링할지 브라우저에게 설명하는 언어
+            - HTML 과 CSS 는 서로 다른 언어이지만, CSS는 HTML 없이  단독적으로 사용할 수 없음
 
-        CSS 구성요소 : 
-            - 
-            - 
-            - 
+        CSS 구성요소 : 선택자 { 속성 : 값; 속성 : 값; ... }
+            - 선택자 (Selector) : 스타일을 적용하고자 하는 HTML의 특정요소를 지정할 때 사용하는 것
+            - 속성 (Property) : 선택자로 HTML의 요소를 선택하고 해당 요소에 어떤 스타일을 적용할지 지정하는 것
+            - 값 (Value) : 속성에 적용할 값 / 키워드, 크기 단위, 색상 단위로 지정
 
         HTML에 CSS 적용 :
-            - 
-            - 
-            - 
-            - 적용 우선순위 : 
-     -->
+            - Link style : HTML 외부에 있는 CSS 파일을 HTML에 로드하여 사용하는 방식
+            - Embadding : HTML 내부 중 head요소안의 style 요소로 css를 작성하는 방식
+            - Inline : HTML 요소으 ㅣ시작 태그에 style 속성으로 css를 작성하는 방식
+            - 적용 우선순위 : Inline > Embadding > Link
+    -->
 
-     <!-- Link style -->
-
-     <!-- Embedding style -->
-
-     <!--
+    <!-- Link style -->
+    <link rel="stylesheet" href="./style.css"/>
+    <!-- Embedding style -->
+    <style>
+        h1 { color:  orange;}
+        h2 { color : blue; }
+    </style>
+    <!--
         Reset CSS : 
-            - 
-            - 
-     -->
+            - 모든 웹 브라우저는 각자 기본 스타일을 가지고 있어 CSS 없이 웹 브라우저 따라 스타일을 각각 다르게 표현
+            - Reset CSS 를 사용하여 HTML 기본 스타일을 제거하여 브라우저들을 동일한 스타일로 통일
+    -->
+    <link rel="stylesheet" href="./reset.css"/>
 </head>
 <body>
     <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
     <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
     <!-- Inline style -->
-    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
+    <h3 style = "color : green">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
 </body>
 </html>
