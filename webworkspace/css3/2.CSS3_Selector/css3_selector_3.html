@@ -16,40 +16,43 @@
         .link:link { color: rgba(0, 0, 0, 0.7); }
         /* ":visited" : 방문한 링크일 때 */
         .link:visited { color: rgba(0, 255, 0, 0.7) }
-        /* ":hover" :  */
-        
-        /* ":active" :  */
-
-        /* ":focus" :  */
-
+        /* ":hover" : 요소에 마우스가 올라와 있을 때 */
+        .action:hover { background-color: rgba(255, 0, 0, 0.7); }
+        /* ":active" : 요소가 클릭이 되는 상태일 때 */
+        .action:active { background-color: rgba(0, 0, 255, 0.7); }
+        /* ":focus" : 요소에 커서가 맞춰져 있을 때 */
+        .action:focus { background-color: rgba(0, 255, 0, 0.7); }
 
         /* UI 요소 선택자 */
-        /* ":checked" :  */
-        
-        /* ":enabled" :  */
-
-        /* ":disabled" :  */
-
+        /* ":checked" : 요소가 체크된 상태 */
+        .ui:checked + .label { color: rgba(255, 0, 0, 0.7) }
+        /* ":enabled" : 요소 사용 가능 */
+        .ui:enabled + .label { font-weight: 700; }
+        /* ":disabled" : 요소 사용 불가능 */
+        .ui:disabled + .label { text-decoration: line-through; }
 
         /* 구조 선택자 */
-        /* ":first-child" :  */
-        
-        /* ":last-child" :  */
-
-
+        /* ":first-child" : 선택자에 해당하는 모든 요소 중 첫번째 형제 요소를 선택 */
+        /* 첫번째 자식 이면서 클래스가 structural 인 요소 */
+        .structural:first-child { background-color: red; }
+        /* ":last-child" : 선택자에 해당하는 모든 요소 중 마지막 형제 요소를 선택 */
+        .structural:last-child { background-color: blue; }
 
         /* 가상 요소 선택자 */
-        /*   */
+        /* 요소의 특정 부분에 스타일을 적용할 때 사용 */
 
-        /* "::first-letter" :  */
-
-        /* "::first-line" :  */
-
-        /* "::after" :  */
-
-        /* "::before" :  */
-
-        /* "::selection" :  */
+        /* "::first-letter" : 컨텐츠의 첫 글자를 선택 */
+        .pseudo1::first-letter { font-size:48px; }
+        /* "::first-line" : 컨텐츠의 첫 줄을 선택 */
+        .pseudo1::first-line { color : rgba(255, 0, 0, 0.8) }
+        /* "::after" : 컨텐츠의 뒤에 있는 위치를 선택 */
+        .pseudo2::after { content: 'after 가상요소'; color:red; }
+        /* "::before" : 컨텐츠의 앞에 있는 위치를 선택 */
+        .pseudo2::before { content: 'before 가상요소'; color: blue
+        ; }
+        
+        /* "::selection" : 드래그한 컨텐츠를 선택 (여러 브라우저에서 지원 X) */
+        .pseudo2::selection { background-color:rgba(255, 255, 0, 0.8) }
 
     </style>
 </head>
