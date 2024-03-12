@@ -11,19 +11,9 @@
             width: 100vw;
             height: 100vh;  
         }
-        .header{
-            float: left;
-        }
-        div[id='top']{
-            display: inline-block;
-        }
-        .header-front{
-            width: 200px;
-            display: inline-block;
-        }
-        .header-back{
-            text-align: right;
-            
+
+        .link{
+            justify-content: flex-end;
         }
 
     </style>
@@ -31,20 +21,17 @@
 <body>
     <div class="page">
         <div class="header">
-            <div class="header-front" id="top">
-                front
-            </div>
             <div class="header-back" id="top">
-                <span>
+                <span class="link">
                     <a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a>
                 </span>
-                <span>
+                <span class="link">
                     <a href="https://www.google.com/imghp?hl=ko&tab=ri&ogbl">이미지</a>
                 </span>
-                <span>
+                <span class="link">
                     <i class="fas fa-smile"></i>
                 </span>
-                <span>
+                <span class="link">
                     <i class="fas fa-smile"></i>
                 </span>
             </div>
