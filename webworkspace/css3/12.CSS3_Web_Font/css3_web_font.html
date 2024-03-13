@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS 웹 폰트</title>
+    
 
     <style>
 
@@ -11,16 +12,27 @@
         /* 구글 폰트 : https://fonts.google.com/?subset=korean&noto.script=Kore */
 
         /*
-            CDN 링크 방식 : 
+            CDN 링크 방식 : @import 방식으로 웹 폰트를 다운받아 사용하는 방식
         */
-        
-
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Nanum+Brush+Script&display=swap');
+        .dongle{
+            font-family: "Dongle";
+            font-size: 30px;
+        }
 
         /*
-            서버 폰트 로딩 방식 : 
-        */
-        
-
+            서버 폰트 로딩 방식 : @font-face 방식으로 웹폰트를 등록하여 사용하는 방식
+        */  
+        @font-face {
+        font-family: 'WAGURITTF';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403@1.0/WAGURITTF.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        }
+        .waguri{
+            font-family: "WAGURITTF";
+            font-size: 30px;
+        }
 
     </style>
 
@@ -28,8 +40,8 @@
 <body>
     
     <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-    <h2 class="nanum-gothic">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-    <h2 class="pretendard">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+    <h2 class="dongle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+    <h2 class="waguri">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
 
 </body>
 </html>
