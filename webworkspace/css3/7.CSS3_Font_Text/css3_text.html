@@ -24,7 +24,6 @@
             letter-spacing: -1.4px;
         }
 
-
         /*
             text-align 속성 : 요소에 대한 수평 정렬을 지정
         */
@@ -32,36 +31,54 @@
         .text-align-right{ text-align: right; }
         .text-align-left{ text-align: left; }
 
-
         /*
-            text-decoration 속성 :  
+            text-decoration 속성 : 텍스트에 underline, overline, line-through 등을 추가
         */
-
-        
-
+        .text-decoration-overline{ text-decoration: overline; }
+        .text-decoration-line-through{ text-decoration: line-through; }
+        .text-decoration-underline{ text-decoration: underline; }
+        .text-decoration-none{ text-decoration: none; }
 
         /*
-            white-space 속성 : 
-                - 
-                - 
+            white-space 속성 : 띄어쓰기(공백), 들여쓰기(tab), 줄바꿈(line break)
+                - 띄어쓰기(공백), 들여쓰기(tab), 줄바꿈(line break)
+                - white-space 속성은 white space를 제어하기 위한 속성
+
                 - value : line break / space, tab / wrapping (자동 줄바꿈)
-                - normal :  /  / 
-                - nowrap :  /  / 
-                - pre :  /  / 
-                - nowrap :  /  / 
-                - nowrap :  /  / 
+                - normal : 무시 / 한번만 적용 / O(기본값)
+                - nowrap : 무시 / 한번만 적용 / X
+                - pre : 적용 / 그대로 적용 / X
+                - pre-wrap : 적용 / 그대로 적용 / O
+                - pre-line : 적용 / 한번만 적용 / O 
         */
-        
+        .white-space-normal{ white-space: normal; }
+        .white-space-nowrap{ white-space: nowrap; }
+        .white-space-pre{ white-space: pre; }
+        .white-space-pre-wrap{ white-space: pre-wrap; }
+        .white-space-pre-line{ white-space: pre-line; }
 
 
         /*
-            text-overflow 속성 : 
-                - 
-                - 
-                - 
+            text-overflow 속성 : 부모 요소의 영역을 벗어난 자동 줄바꿈이 되니 않는 텍스트에 대한 처리 방법
+                - width 속성이 반드시 지정되어야 한다
+                - 자동 줄바꿈 방지를 위해 white-space 값을 no-wrap 등으로 지정
+                - overflow 속성에 'visible' 속성이 아닌 값으로 지정
         */
-        
-
+        .text-box {
+            width: 150px;
+            height: 150px;
+            padding: 10px;
+            margin: 15px;
+            background-color: antiquewhite;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .text-overflow-clip{
+            text-overflow: clip;
+        }
+        .text-overflow-ellipsis{
+            text-overflow: ellipsis;
+        }
 
     </style>
 
@@ -93,7 +110,7 @@
 
     <hr />
 
-    <h2>text-decoration</h2>
+    <h2>white-space</h2>
 
     <div class="white-space-normal">Lorem   ipsum
 
