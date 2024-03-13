@@ -9,11 +9,23 @@
 
         /*
             스타일 상속 : 
-                - 
-                - 
-                - 
-                - 
+                - 상위 요소에 지정한 속성을 하위 요소가 물려받는 것
+                - 모든 속성을 하위 요소가 물려받지는 않는다
+                - 상속불가 : 박스모델 속성, 정렬 속성, 위치 지정 속성, 백그라운드 속성
+                - 상속불가한 요소에 대해 하위 요소가 부모 요소의 값을 물려받게 하려면 해당 속성값으로 inherit 값을 지정
         */
+        .parent{
+            /* 상속 O */
+            color: rgba(0, 0, 255, 0.3);
+            font-size: 24px;
+            /* 상속 X */
+            background-color: rgba(255, 0, 0, 0.3);
+            padding: 10px;
+        }
+        .child{
+            background-color: inherit;
+            padding: inherit;
+        }
 
     </style>
 </head>
