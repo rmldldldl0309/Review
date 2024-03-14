@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+
+    <style>
+
+        /*
+            Grid : 
+                - 2차원(행과 열) 레이아웃 시스템을 제공하여 복잡한 웹 레이아웃 구성을 쉽게할 수 있다
+                - 1차원 레이아웃에는 Flexbox 가 유용한 반면, 2차원 레이아웃에는 Grid가 유용
+        */
+
+        /*
+            Grid Container 속성 : grid item 을 자식으로 가지는 부모요소로 display:grid 로 지정가능
+        */
+        .grid-container{display: grid;}
+
+        /*
+            grid-template-columns 속성 : 그리드의 열의 크기 및 개수를 지정
+            grid-template-rows 속성 : 그리드의 행의 크기 및 개수를 지정
+            grid-template-areas 속성 : 그리드 영역의 이름을 지정
+        */
+        .grid-template-columns-rows{
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 100px 200px 300px;
+            grid-template-areas: 
+                "header header header"
+                "main main sidebar"
+                "footer footer footer";
+        }
+
+        /*
+            grid-template 속성 : *-*-columns, *-*-rows, *-*-areas 를 한번에 지정하는 단축 속성
+        */
+        .grid-template{
+            grid-template: 
+                "header header header" 100px
+                "main main sidebar" 200px
+                "footer footer footer" 300px
+                /1fr 1fr 1fr
+                ;
+        }
+
+        /*
+            Grid Item 속성 : 
+                - grid-column-start : grid item 의 열 시작위치 지정 
+                - grid-column-end : grid item 의 열 종료위치 지정
+                - grid-row-start : grid item 의 행 시작위치 지정
+                - grid-row-end : grid item 의 행 종료위치 지정
+        */
+        .header-1{
+            background-color: rgba(0, 0, 0, 0.8);
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .main-1{
+            background-color: rgba(0, 0, 0, 0.2);
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .sidebar-1{
+            background-color: rgba(0, 0, 0, 0.4);
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .footer-1{
+            background-color: rgba(0, 0, 0, 0.6);
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+
+        /*
+            Grid Item 단축 속성 : 
+                - grid-column : 그리드 아이템의 열 시작점 및 종료점을 지정
+                - grid-row : 그리드 아이템의 행 시작점 및 종료점을 지정
+        */
+        .header-2{
+            background-color: rgba(0, 0, 0, 0.8);
+            grid-column: 1 / 4;
+            grid-row: 1 / 2;
+        }
+        .main-2{
+            background-color: rgba(0, 0, 0, 0.2);
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+        }
+        .sidebar-2{
+            background-color: rgba(0, 0, 0, 0.4);
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+        .footer-2{
+            background-color: rgba(0, 0, 0, 0.6);
+            grid-column: 1 / 4;
+            grid-row: 3 / 4;
+        }
+
+        /*
+            grid-area 속성 : grid item 의 이름으로 위치를 지정
+        */
+        .header-3{
+            background-color: rgba(0, 0, 0, 0.8);
+            grid-area: header;
+        }
+        .main-3{
+            background-color: rgba(0, 0, 0, 0.2);
+            grid-area: main;
+        }
+        .sidebar-3{
+            background-color: rgba(0, 0, 0, 0.4);
+            grid-area: sidebar;
+        }
+        .footer-3{
+            background-color: rgba(0, 0, 0, 0.6);
+            grid-area: footer;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+    <div class="grid-container grid-template-columns-rows">
+        <div style="background-color: rgba(255, 0, 0, 0.75);"></div>
+        <div style="background-color: rgba(0, 255, 0, 0.75);"></div>
+        <div style="background-color: rgba(0, 0, 255, 0.75);"></div>
+        <div style="background-color: rgba(255, 255, 0, 0.75);"></div>
+        <div style="background-color: rgba(0, 255, 255, 0.75);"></div>
+        <div style="background-color: rgba(255, 0, 255, 0.75);"></div>
+        <div style="background-color: rgba(255, 0, 0, 0.75);"></div>
+        <div style="background-color: rgba(0, 255, 0, 0.75);"></div>
+        <div style="background-color: rgba(0, 0, 255, 0.75);"></div>
+    </div>
+
+    <br />
+
+    <hr />
+
+    <br />
+
+    <div class="grid-container grid-template-columns-rows">
+        <div class="header-1"></div>
+        <div class="main-1"></div>
+        <div class="sidebar-1"></div>
+        <div class="footer-1"></div>
+    </div>
+
+    <br />
+
+    <hr />
+
+    <br />
+
+    <div class="grid-container grid-template-columns-rows">
+        <div class="header-2"></div>
+        <div class="main-2"></div>
+        <div class="sidebar-2"></div>
+        <div class="footer-2"></div>
+    </div>
+
+    <br />
+
+    <hr />
+
+    <br />
+
+    <div class="grid-container grid-template">
+        <div class="header-3"></div>
+        <div class="main-3"></div>
+        <div class="sidebar-3"></div>
+        <div class="footer-3"></div>
+    </div>
+
+</body>
+</html>
