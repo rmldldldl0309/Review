@@ -14,16 +14,20 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
+            position: relative;
             position: fixed;
             border-bottom: 1px solid rgba(0, 0, 0, 0.075);
         }
         .head-space{
             width: 1700px;
-            height: 100%;
-            justify-content: space-between;
+            height: 70;
+            background-color: white;
+            z-index: 100;
+
             display: flex;
-            flex-direction: row;
+            justify-content: space-between;
             align-items: center;
+            flex-direction: row;
         }
         .head-space-logo{
             width: 100px;
@@ -32,9 +36,10 @@
         }
         .head-space-menu{
             width: 750px;
+            font-size: 16px;
+
             display: flex;
             justify-content: space-around;
-            font-size: 16px;
         }
         .head-space-icon{
             width: 150px;
@@ -51,14 +56,17 @@
         /* middle ============================================================================ */
         .middle{
             width: 100%;
+            height: 2000px;
             padding-top: 70px;
-            height: 1000px;
+            background-color: white;
+
             display: flex;
             justify-content: center;
         }
         .middle-box{
             width: 1700px;
             height: 900px;
+
             display: flex;
             justify-content: space-between;
         }
@@ -76,9 +84,10 @@
         .middle-box2{
             width: 330px;
             height: 900px;
+
             display: flex;
-            flex-direction: column;
             justify-content: space-between;
+            flex-direction: column;
         }
         #middle-box2-content1{
             width: 330px;
@@ -94,6 +103,7 @@
             height: 380px;
             background-color: rgba(0, 0, 0, 0.1);
             border-radius: 30px;
+            
             display: flex;
             justify-content: center;
             align-items: center;
@@ -101,6 +111,7 @@
         .middle-box2-content2-box{
             width: 290px;
             height: 340px;
+
             display: flex;
             justify-content: flex-start;
             flex-direction: column;
@@ -110,12 +121,15 @@
         }
         .mb2-a{
             height: 40px;
-            background-color: black;
+            margin-right: 130px;
             font-weight: bold;
             color: white;
+            background-color: black;
+            border-radius: 10px;
+
             display: inline-flex;
+            justify-content: center;
             align-items: center;
-            text-align: left;
         }
         #middle-box2-content3{
             width: 330px;
@@ -129,7 +143,7 @@
 <body>
     <div class="page">
         <!-- 헤드 메뉴바 -->
-        <div class="head">
+        <div class="head" style="z-index: 100;">
             <div class="head-space">
                 <div class="head-space-logo">kakao</div>
                 <div class="head-space-menu">
@@ -150,7 +164,7 @@
             </div>
         </div>
         <!-- 중간부분 -->
-        <div class="middle">
+        <div class="middle" style="z-index: 5;">
             <div class="middle-box">
                 <div class="middle-box-content1">
                     <video src="../resource/200157 (720p).mp4" autoplay loop class="video1"></video>
