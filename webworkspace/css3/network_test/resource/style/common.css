@@ -1,0 +1,220 @@
+@font-face {
+    font-family: KakaoRegular;
+    src: url('../font/KakaoRegular.ttf');
+}
+@font-face {
+    font-family: KakaoBold;
+    src: url('../font/KakaoBold.ttf');
+}
+@media screen and (max-width: 800px) {
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #wrapper{
+    }
+    #box-top{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    #top-2{
+        visibility: hidden;
+    }
+    #top-1{
+        width: 560px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #box-bottom{
+        margin-top: -75px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .black-textbox{
+        font-size: 16px;
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: KakaoRegular;
+    src: url('../font/KakaoRegular.ttf');
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+/* 전체 틀 ============================================================================================== */
+#wrapper{
+    width: 1712px;
+    height: 324px;
+    gap: 16px;
+
+    display: flex;
+    flex-direction: column;
+}
+/* 위쪽 박스 ==================================================================== */
+#box-top{
+    width: 1712px;
+    height: 198px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+/* 위쪽 박스 - 윗 컨텐츠 ==================================== */
+.box-top-content{
+    width: 848px;
+    height: 198px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.box-top-content-in{
+    width: 768px;
+    height: 126px;
+}
+/* 윗 컨텐츠 - 1 */
+.content-top{
+    width: 100%;
+    height: 32px;
+    letter-spacing: -.2;
+    gap: 12px;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    display: flex;
+    align-items: center;
+}
+.content-top:hover{
+    cursor: default;
+}
+.content-top::before{
+    background-image: url('https://t1.kakaocdn.net/kakaocorp/kakaocorp/admin/6562f7bc017800001.png');
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    
+    content: "";
+    background-size: 100%;
+}
+.black-textbox{
+    width: 72px;
+    height: 32px;
+    font-size: 14px;
+
+    text-align: center;
+    line-height: 32px;
+
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 1);
+    border-radius: 7px;
+}
+.top-content-in{
+    display: flex;
+}
+/* 윗 컨텐츠 - 2 */
+.dotdotdot{
+    background-image: url('https://cdn-icons-png.flaticon.com/512/64/64576.png');
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+
+    content: "";
+    background-size: cover;
+    background-repeat: repeat-x;
+}
+.dotdotdot:hover{
+    cursor: pointer;
+}
+/* 위쪽 박스 - 아래 컨텐츠  ==================================== */
+.content-bottom{
+    font-family: KakaoBold;
+    src: url('../font/KakaoBold.ttf');
+
+    width: 100%;
+    height: 76px;
+    margin-top: 12px;
+
+    font-size: 26px;
+    line-height: 38px;
+}
+.content-bottom:hover{
+    cursor: pointer;
+}
+
+/* 아래쪽 박스 ==================================================================== */
+#box-bottom{
+    width: 1712px;
+    height: 110px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+.box-bottom-content{
+    width: 560px;
+    height: 100%;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.box-bottom-content:hover{
+    cursor: pointer;
+    .circle{
+        color: rgba(150, 150, 150, 1);
+    }
+}
+.bottom-content-in{
+    width: 480px;
+    height: 38px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* 아래쪽 박스 컨텐츠 - 1 */
+.bottom-content-text{
+    font-size: 26px;
+}
+/* 아래쪽 박스 컨텐츠 - 2 */
+.content-in-go{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.gogo{
+    font-size: 18px;
+    line-height: 38px;
+}
+.circle{
+    width: 23px;
+    height: 23px;
+    border-radius: 11.5px;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 23px;
+
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(0, 0, 0, 1);
+}
