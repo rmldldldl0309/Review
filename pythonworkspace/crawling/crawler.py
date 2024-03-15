@@ -55,7 +55,7 @@ for news_title_element in news_title_elements:
     # title = news_title_element.text
     title = news_title_element.get_attribute('title')
     print(title)
-          
+    
 time.sleep(1)
 
 driver.back()
