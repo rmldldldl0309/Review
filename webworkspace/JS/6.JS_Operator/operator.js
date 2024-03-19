@@ -29,13 +29,13 @@ let single = 0;
 let result = 0;
 
 // 선대입 후증가
-result = single ++ * 8; // 0
+result = single ++ * 8; // 0, single = 1
 // 선증가 후대입
-result = ++ single * 8; // 16
+result = ++ single * 8; // 16, single = 2
 // 선대입 후감소
-result = single -- + 9 - ++ single; // 9
+result = single -- + 9 - ++ single; // 9, single = 2 / 계산할 때 앞의 single = 2 뒤의 single = 1 이후 ++
 // 선감소 후대입
-result = -- single;
+result = -- single; // 1, single = 1
 console.log(result)
 
 /*
@@ -97,7 +97,7 @@ const number = 9;
 // const result2 = number % 2 === 0 ? '짝수' : '홀수';
 // const result2 = number % 2 ? '홀수' : '짝수';
 // console.log(result2);
-
+const result2 = '';
 if (number % 2){
     result2 = '홀수';
 }else{
@@ -130,7 +130,7 @@ console.log(false || '홍길동');     // 홍길동
 console.log(true && '홍길동');   // 홍길동
 console.log(false && '홍길동');  // false
 
-console.log('홍길동' && true);   // true
+console.log('홍길동' && true);   // true, 이런 경우는 쓸 일 거의 없음
 
 /*
     !- || 연산과 && 연산의 결과는 논리값이 아닐 수 있다
