@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch 연습</title>
+</head>
+<body>
+    <div>
+        <span>이름 : </span><input id="name" type="text"/>
+        <span>나이 : </span><input id="age" type="number"/>
+        <!-- click이라는 event가 일어났을때 onSubmitHandler 호출하기 위해 inline 작업 -->
+        <button id="submit" type="button" onclick="onSubmitHandler();">전송</button>
+        <button id="post-submit" type="button" onclick="onPostSubmitHandler()">전송</button>
+    </div>
+
+    <script>
+        const onSubmitHandler =  function (event) {
+            // nameInputElement, ageInputElement 에 name, age 값 받아오기
+            const nameInpuElement = document.getElementById('name');
+            const ageInputElement = document.getElementById('age');
+            // 위에서 받은 값 name, age에 값 넣어 구현
+            const name = nameInpuElement.value;
+            const age = ageInputElement.value;
+
+            // http 요청
+            fetch(`http://localhost:4000/request-data/path-variable/${age}/${name}`, {
+                method: 'DELETE'
+            })
+            .then(function (response) {
+                response.text() // JSON으로 받을 경우 JSON.json
+                .then(function (result) {
+                    console.log(result);
+                });
+            }); // blocked by C ORS policy > Spring boot에서 CorsConfig 수정해서 정책 허용
+        };
+
+
+
+        const onPostSubmitHandler = function (event) {
+            fetch(`http://localhost:4000/request-data/post`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(function (response) {
+                response.text() // JSON으로 받을 경우 JSON.json
+                .then(function (result) {
+                    console.log(result);
+                });
+            })
+            .catch (function (error) {
+                console.log(error());
+                console.log(error);
+            });
+        };
+    
+    </script>
+</body>
+</html>
