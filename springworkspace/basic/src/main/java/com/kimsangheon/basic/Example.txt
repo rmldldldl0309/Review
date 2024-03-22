@@ -1,0 +1,16 @@
+spring init 
+    > application.propertores (server.port 변경)
+    > controller 생성 (@RestController, @RequestMapping)
+    > 각 HTTP 요청에 따른 method 생성 (@Get, Post, Put, Patch, DeleteMapping)
+        - 브라우저의 스크립으도 구청이 넘어왔울 때 같은 출처가 아니라면 CORS 정책으로 막힘
+        - CorsConfig 클래서를 셍성하여 Cors 정책변경 (@Configuration, @WebMvcConfigurer)
+        - CorsRegistry 객체를 설정 (addMapping: URL 패턴 지정 / allowdMethods: HTTP method 지정 ,allowOrgins : 출처 지정                                           )
+    > 각 HTTP 요청에서 데이터를 받음 (@RequestParam, @PathVariable, @RequestBody)
+    > 데이터를 받을 때 필수 체크 (@RequestParam, @PathVariable > request속성 이용 / @RequestBody > validation 라이브러리 활용)
+        (build.gradle 의존성 추가) 
+    > RequestBody의 JSON 데이터를 DTO로 받음
+    > RequestBody에서 유효성 검사 어노테이션으로 각 속성마다 검사 (@NotNull, @NotBlank)
+    > validation을 사용해서 유효성 검사 시 유효하지 않으면 spring boot가 자동으로 response body를 생성하여 응답
+        - ExcaptionHandler 클래스로 validation관련 예외 직접 처리
+        - @RestControllerAdvide, @ExcaptionHandler 등을  사용
+    > 각 HTTP 응답을 직접 제어하기 위해 ResponseEntity 클래스 사용 (status code, body, headr 등 제어)
