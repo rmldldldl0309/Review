@@ -10,17 +10,17 @@ URL = 'https://naver.com'
 
 # response - status code  
 # 100: 추가 요청 기다림 / 200: 성공 / 300: 리소스 위치 변경됨 / 400: 요청자(클라이언트) 오류 / 500: 응답자(서버) 오류
-response = requests.get(URL)
+# response = requests.get(URL)
 
-if response.status_code == 200:
-    html = response.text
-    soup = BeautifulSoup(html, 'html.parser')
-    a_list = soup.find_all('a')
-else:
-    print(response.status_code)
+# if response.status_code == 200:
+#     html = response.text
+#     soup = BeautifulSoup(html, 'html.parser')
+#     a_list = soup.find_all('a')
+# else:
+#     print(response.status_code)
 
 # ==============================================================================================================================
-# ▶ 웹 크롤링 (Crawling): 브라우저 드라이버를 이용하여 실제로 각 페이지를 이동하며 '동적'으로 데이터를 수집하는 방법
+# ▶ 웹 크롤링 (Crawling): 에
 # 파이썬 크롤링 패키지: selenium
 # pip install selenium
 
@@ -77,21 +77,21 @@ for image_element in image_elements:
     image_list.append(image_src)
 time.sleep(1)
 
-# 파이썬으로 폴더 생성
-import os
+# # 파이썬으로 폴더 생성
+# import os
 
-FOLDER_PATH = r'../images/'
+# FOLDER_PATH = r'../images/'
 
-if not os.path.isdir(FOLDER_PATH):
-    os.mkdir(FOLDER_PATH)
-# -------------------
+# if not os.path.isdir(FOLDER_PATH):
+#     os.mkdir(FOLDER_PATH)
+# # -------------------
 
-# 파이썬으로 이미지 URL 파일 다운로드
-from urllib.request import urlretrieve
+# # 파이썬으로 이미지 URL 파일 다운로드
+# from urllib.request import urlretrieve
 
-number = 1
+# number = 1
 
-for image_src in image_list:
-    urlretrieve(image_src, FOLDER_PATH + f'{number}.png') 
-    number += 1
-    time.sleep(0.5)
+# for image_src in image_list:
+#     urlretrieve(image_src, FOLDER_PATH + f'{number}.png') 
+#     number += 1
+#     time.sleep(0.5)

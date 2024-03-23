@@ -1,27 +1,31 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class asd {
     public static void main(String[] args) {
-        String code = "abc1abc1abc";
-        String[] code_ = code.split("");
-        int mode = 0;
-        String ret = "";
+        
+        int[] arr = new int[5];
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 3;
+        arr[4] = 5;
 
-        for (int idx = 0; idx <= code_.length; idx++){
-            if (mode == 0){
-                if (code_[idx] != "1" && idx % 2 == 0){
-                    ret = ret.concat(code_[idx]);
-                }
-                else{
-                    mode  = 1;
-                }
-            }
-            else if (mode == 1){
-                if (code_[idx] != "1" && idx % 2 == 1){
-                    ret = ret.concat(code_[idx]);
-                }
-                else{
-                    mode = 0;
-                }
-            }
-        }
+        System.out.println(Arrays.toString(arr)); // [1, 2, 3, 0, 5]
+        
+        List<String> list = new ArrayList<String>();
+        list.add("값1");
+        list.add("값2");
+        list.add("값3");
+        System.out.println(list.size());
+        
+        System.out.println(list.get(1));
+
+        ArrayList<String> arraylist = new ArrayList<String>(5);
+        arraylist.add("값1");
+        arraylist.add("값2");
+        arraylist.add("값3");
+        
+        System.out.println(arraylist.size());
     }
 }
