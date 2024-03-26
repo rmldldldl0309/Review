@@ -1,0 +1,84 @@
+#sign-up-wrapper{
+    display: flex;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 1024px;
+}
+.sign-up-image-box{
+    min-width: 830px;
+    background-image: url(../../resource/img/KakaoTalk_20240326_114405991.png);
+    background-size: cover;
+}
+
+.sign-up-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-grow: 1;
+    min-width: 610px;
+}
+.sign-up-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    width: 380px;
+}
+.sign-up-title{
+    color: rgba(64, 64, 64, 1);
+}
+.sign-up-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    width: 100%;
+}
+.sns-button-container{
+    display: flex;
+    gap: 24px;
+}
+.sign-up-sns-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.sign-up-button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
+}
+.sign-up-input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 100%;
+}
+.disable-button{
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 8px 24px;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 175%;
+    color: rgba(255, 255, 255, 1);
+
+    border-radius: 6px;
+    background-color: rgba(138, 146, 166, 1);
+}
+

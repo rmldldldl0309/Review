@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>임대주택 가격서비스</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../common.css">
+</head>
+<body>
+    <div id="sign-in-wrapper">
+        <div class="sign-in-image-box"></div>
+
+        <div class="sign-in-box">
+            <div class="sign-in-container">
+                <div class="sign-in-title h1">임대주택 가격 서비스</div>
+                <div class="sign-in-contents">
+                    <div class="sign-in-input-container">
+                        <div class="input-box">
+                            <div class="input-label label">아이디</div>
+                            <div class="input-content-box">
+                                <input id="id" class="input" type="text" placeholder="아이디를 입력해주세요" />
+                            </div>
+                            <div class="input-message"></div>
+                        </div>
+                        <div class="input-box">
+                            <div class="input-label label">비밀번호</div>
+                            <div class="input-content-box">
+                                <input id="password" class="input" type="text" placeholder="비밀번호를 입력해주세요" /> 
+                            </div>
+                            <div id="sign-in-message" class="input-message error"></div>
+                        </div>
+                    </div>
+                    <div class="sign-in-button-container">
+                        <div class="primary-button full-width" onclick="onSignInButtonClickHandler()">로그인</div>
+                        <div  id="sign-up-link" class="text-link">회원가입</div>
+                    </div>
+                    <div class="short-divider"></div>
+                    <div class="sign-in-sns-container">
+                        <div class="sns-container-title label">SNS 로그인</div>
+                        <div class="sns-button-container">
+                            <div id="kakao" class="sns-button kakao-button"></div>
+                            <div id="naver" class="sns-button naver-button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
