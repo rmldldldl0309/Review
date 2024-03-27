@@ -30,7 +30,7 @@ import lombok.RequiredArgsConstructor;
 // > HTTP GET localhost:4000/main/**
 @RequestMapping("/main")
 
-// 서비스가 많은 경우 생성자가 너무 많아짐 > Lombok의 @AllArgsConstrutor 활용
+// 서비스가 많은 경우 생성자가 너무 많아짐 > Lo mbok의 @AllArgsConstrutor 활용
 // @AllArgsConstructor
 
 // final로 선언되어있는 필드 변수에 대해 생성자를 자동으로 작성

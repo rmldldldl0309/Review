@@ -1,5 +1,7 @@
 package com.kimsangheon.basic.entity;
 
+import com.kimsangheon.basic.dto.request.student.PostStudentRequestDto;
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -57,5 +59,13 @@ public class StudentEntity {
     private String name;
     private Integer age;
     private String address;
-    private boolean graduation;
+    private Boolean graduation;
+
+    // studentServiceImplement 에서 사용하도록 dto생성
+    public StudentEntity(PostStudentRequestDto dto) {
+        this.name = dto.getName();
+        this.age = dto.getAge();
+        this.address = dto.getAddress();
+        this.graduation = dto.getGraduation();
+    }
 }
