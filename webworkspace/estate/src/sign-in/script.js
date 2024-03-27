@@ -14,24 +14,8 @@ function onSignInButtonClickHandler(event) {
 }
 
 function onSignUpLinkClickHandler (event) {
-    window.location.href = 'https://google.com';
+    window.location.href = '../sign-up';
 }
 
 const signUpLinkElement = document.getElementById('sign-up-link');
 signUpLinkElement.addEventListener('click', onSignUpLinkClickHandler);
-
-// https://developers.kakao.com/
-
-// https://developers.naver.com/
-
-function goToKakaoHandler (evert) {
-    window.location.href = 'https://developers.kakao.com/';
-}
-const goToKakaoElement = document.getElementById('kakao');
-goToKakaoElement.addEventListener('click', goToKakaoHandler);
-
-function goToNaverHandler (evert) {
-    window.location.href = 'https://developers.naver.com/';
-}
-const goToNaverElement = document.getElementById('naver');
-goToNaverElement.addEventListener('click', goToNaverHandler);
