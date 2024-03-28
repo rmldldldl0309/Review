@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kimsangheon.basic.dto.request.student.PatchStudentRequestDto;
 import com.kimsangheon.basic.dto.request.student.PostStudentRequestDto;
 import com.kimsangheon.basic.service.StudentServie;
 
@@ -36,17 +37,21 @@ public class studentCotroller {
 
     // Update
     @PatchMapping("/")
-    public ResponseEntity<?> patchStudent(){
-        return null;
+    public ResponseEntity<String> patchStudent(
+        @RequestBody @Valid PatchStudentRequestDto requestBody
+    ) {
+        ResponseEntity<String> response = studentServie.patchStudent(requestBody);
+        return response;
     }
 
     // Delete
     @DeleteMapping("/{studentNumber}")
-    public ResponseEntity<?> deleteStudent(
+    public ResponseEntity<String> deleteStudent(
         // Path경로의 변수 사용 시
         @PathVariable("studentNumber") Integer studentNumber
     ) {
-        return null;
+        ResponseEntity<String> response = studentServie.deleteStudent(studentNumber);
+        return response;
     }
 
     // Read
