@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kimsangheon.basic.dto.request.student.PatchStudentRequestDto;
 import com.kimsangheon.basic.dto.request.student.PostStudentRequestDto;
-import com.kimsangheon.basic.service.StudentServie;
+import com.kimsangheon.basic.service.StudentService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class studentCotroller {
     
     // 외부에서 주입
-    private final StudentServie studentServie;
+    private final StudentService studentServie;
 
     // Create
     @PostMapping("/")

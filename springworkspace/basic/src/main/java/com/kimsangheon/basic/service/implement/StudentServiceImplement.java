@@ -9,13 +9,13 @@ import com.kimsangheon.basic.dto.request.student.PatchStudentRequestDto;
 import com.kimsangheon.basic.dto.request.student.PostStudentRequestDto;
 import com.kimsangheon.basic.entity.StudentEntity;
 import com.kimsangheon.basic.repositiry.StudentRepository;
-import com.kimsangheon.basic.service.StudentServie;
+import com.kimsangheon.basic.service.StudentService;
 
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class StudentServiceImplement  implements StudentServie{
+public class StudentServiceImplement  implements StudentService{
 
     private final StudentRepository studentRepository;
     @Override
@@ -74,6 +74,14 @@ public class StudentServiceImplement  implements StudentServie{
         return ResponseEntity.status(HttpStatus.OK).body("성공");
     }
 
+
+    
 }
 
 // table  > class 와 매핑 / instance생성 > recoed생성
+
+// CRUD 
+    // CREATE : 1~2 
+    // READ : 엄청맘ㄶ음
+    // UPDATE : 1~컬럼개수
+    // DELETE : 1~2
