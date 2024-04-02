@@ -1,4 +1,4 @@
-package com.example.board.dto.response;
+package com.example.board.dto.Response;
 
 public interface ResponseMessage {
     String SUCCESS = "Success";

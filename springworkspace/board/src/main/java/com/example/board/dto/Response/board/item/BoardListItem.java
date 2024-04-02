@@ -1,4 +1,4 @@
-package com.example.board.dto.response.board.item;
+package com.example.board.dto.Response.board.item;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

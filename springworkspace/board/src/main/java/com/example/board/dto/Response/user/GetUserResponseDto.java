@@ -1,20 +1,20 @@
-package com.example.board.dto.response.user;
+package com.example.board.dto.Response.user;
 
-import java.util.ArrayList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.List;
 
-import org.apache.catalina.connector.Response;
+// import org.apache.catalina.connector.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.example.board.dto.response.ResponseCode;
-import com.example.board.dto.response.ResponseDto;
-import com.example.board.dto.response.ResponseMessage;
+import com.example.board.dto.Response.ResponseCode;
+import com.example.board.dto.Response.ResponseDto;
+import com.example.board.dto.Response.ResponseMessage;
 
 import lombok.Getter;
 
 @Getter
-public class GetUserDto extends ResponseDto{
+public class GetUserResponseDto extends ResponseDto{
     private String email;
     private String nickName;
     private String profileImage;
@@ -37,15 +37,15 @@ public class GetUserDto extends ResponseDto{
     //     return ResponseEntity.status(HttpStatus.OK).body(body);
     // }
 
-    private GetUserDto(String email, String nickName, String profileImage) {
+    private GetUserResponseDto(String email, String nickName, String profileImage) {
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
         this.email = email;
         this.nickName = nickName;
         this.profileImage = profileImage;
     }
 
-    private static ResponseEntity<GetUserDto> success (String email, String nickName, String profileImage) {
-        GetUserDto body = new GetUserDto(email, nickName, profileImage);
+    public static ResponseEntity<GetUserResponseDto> success (String email, String nickName, String profileImage) {
+        GetUserResponseDto body = new GetUserResponseDto(email, nickName, profileImage);
         return ResponseEntity.status(HttpStatus.OK).body(body);
 
     }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.board.dto.Request.PostSignInRequestDto;
-import com.example.board.dto.response.ResponseDto;
+import com.example.board.dto.Response.ResponseDto;
 import com.example.board.service.AuthService;
 
 import jakarta.validation.Valid;

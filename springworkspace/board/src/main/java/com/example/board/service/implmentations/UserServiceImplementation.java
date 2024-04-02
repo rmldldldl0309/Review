@@ -1,21 +1,35 @@
 package com.example.board.service.implmentations;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
-import com.example.board.dto.response.user.GetUserDto;
+import com.example.board.dto.Response.ResponseDto;
+import com.example.board.dto.Response.user.GetUserResponseDto;
+import com.example.board.repository.UserRepository;
 import com.example.board.service.UserService;
 
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
 public class UserServiceImplementation implements UserService{
-    private final UserService userService;
-
+    
+    private final UserRepository userRepository;
+    
     @Override
-    public ResponseEntity<? super GetUserDto> getUser() {
-        try{
+    public ResponseEntity<? super GetUserResponseDto> getUser(String email) {
+        
+        try {
 
-        } catch {
+            return ResponseDto.notExistUser();
             
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return ResponseDto.databaseError();
         }
-    }
 
+        return GetUserResponseDto.success("email@email.com", "홍길동", null);
+
+    }
 
 }
