@@ -7,25 +7,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.board.dto.Request.PostAuthRequestDto;
+import com.example.board.dto.Request.PostSignInRequestDto;
+import com.example.board.dto.response.ResponseDto;
+import com.example.board.service.AuthService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("api/v1/auth")
 @RequiredArgsConstructor
 public class AuthController {
     
-    // 로그인 하기
+    private final AuthService authService;
+
+    // 로그인
     @PostMapping("/sign-in")
-    public ResponseEntity<String> PostAuth (
-        @RequestBody@Valid PostAuthRequestDto requestbody
+    public ResponseEntity<ResponseDto> PostSignIn (
+        @RequestBody@Valid PostSignInRequestDto requestbody
     ){
-        
-        return null;
+        ResponseEntity<String> response = authService.PostSignIn(requestbody);
+        return response;
     }
-
-
 
 }

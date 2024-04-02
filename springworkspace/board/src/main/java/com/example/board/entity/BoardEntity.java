@@ -13,7 +13,7 @@ import lombok.Setter;
 @Entity(name = "board")
 @Table(name = "board")
 public class BoardEntity {
-
+    
     @Id
     // auto_increment
     @GeneratedValue(strategy = GenerationType.IDENTITY)
