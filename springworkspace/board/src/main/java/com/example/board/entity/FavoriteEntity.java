@@ -2,6 +2,7 @@ package com.example.board.entity;
 
 import com.example.board.entity.pk.FavoritePK;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.board.dto.Request.PostSignInRequestDto;
-import com.example.board.dto.Response.ResponseDto;
+import com.example.board.dto.request.SignUpRequestDto;
+import com.example.board.dto.response.ResponseDto;
 import com.example.board.service.AuthService;
 
 import jakarta.validation.Valid;
@@ -21,12 +21,13 @@ public class AuthController {
     
     private final AuthService authService;
 
-    // 로그인
-    @PostMapping("/sign-in")
-    public ResponseEntity<ResponseDto> PostSignIn (
-        @RequestBody@Valid PostSignInRequestDto requestbody
+    // 회원가입
+    @PostMapping("/sign-up")
+    public ResponseEntity<ResponseDto> signUp (
+        // @Requestbody : requestbody에서 꺼내와라
+        @RequestBody@Valid SignUpRequestDto requestbody
     ){
-        ResponseEntity<String> response = authService.PostSignIn(requestbody);
+        ResponseEntity<ResponseDto> response = authService.signUp(requestbody);
         return response;
     }
 

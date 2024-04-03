@@ -1,4 +1,4 @@
-package com.example.board.dto.Request;
+package com.example.board.dto.request;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter@Setter@NoArgsConstructor
-public class PostSignInRequestDto {
+public class SignUpRequestDto {
     
     @NotBlank
     @Pattern(regexp = "^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$")
@@ -23,9 +23,9 @@ public class PostSignInRequestDto {
     private String nickname;
 
     @NotBlank
-    @Pattern(regexp = "^[0-9]{10,11}$")
+    @Pattern(regexp = "^[0-9]{10,12}$")
     private String telNumber;
- 
+
     @NotBlank
     private String address;
 

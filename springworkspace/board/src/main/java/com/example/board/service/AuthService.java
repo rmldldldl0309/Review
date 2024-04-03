@@ -2,9 +2,12 @@ package com.example.board.service;
 
 import org.springframework.http.ResponseEntity;
 
-import com.example.board.dto.Response.board.GetLatestListResponseDto;
+import com.example.board.dto.request.SignUpRequestDto;
+import com.example.board.dto.response.ResponseDto;
 
 public interface AuthService {
+
+    ResponseEntity<ResponseDto> signUp(SignUpRequestDto dto);
 
 }    
 
