@@ -7,7 +7,8 @@ import CurlyBraces from './component/CurlyBraces';
 import Properties from './component_manage/Properties';
 import InputBox from './component/example/InputBox';
 import SignInContainer from './component_manage/example/SignInContainer';
-import ConditionalRedering from './component_manage/ConditionalRedering';
+import ConditionalRedering from './component_manage/ConditionalRendering';
+import ListRendering from './component_manage/ListRendering';
 
 // import Component, { Sample } from './component/Component';
 
@@ -80,10 +81,11 @@ function App() {
       <FunctionComponent/> */}
       {/* <Component/>
       <Sample/> */}
-      {/* <SignInContainer/> */}
+      <SignInContainer/>
       {/* <CurlyBraces/> */}
       {/* <Properties/> */}
-      <ConditionalRedering/>
+      {/* <ConditionalRedering/> */}
+      {/* <ListRendering/> */}
     </>
   );
 }
