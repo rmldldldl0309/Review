@@ -1,4 +1,4 @@
-package com.example.board.dto.request;
+package com.example.board.dto.request.auth;
 
 import org.hibernate.validator.constraints.Length;
 

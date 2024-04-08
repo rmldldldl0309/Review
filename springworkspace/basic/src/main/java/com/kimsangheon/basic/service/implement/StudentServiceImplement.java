@@ -1,7 +1,6 @@
 package com.kimsangheon.basic.service.implement;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -57,7 +56,7 @@ public class StudentServiceImplement  implements StudentService{
         StudentEntity studentEntity = studentRepository.
         // 2. dto.studentNumbre에 해당하는 인스턴스 검색
         findById(studentNumber).get();
-        // 3. 검색된 인스턴스의 address값을 dto.address로 변경
+        // 3. 검색된 인스턴스의 address값을 dto.address로 변경 +
         studentEntity.setAddress(address);
         // 4. 변경한 인스턴스를 데이터베이스에 저장
         // respository.save()는 레코드를 생성할 때 쓰이지만, 수정시에도 사용된다

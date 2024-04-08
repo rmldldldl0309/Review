@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.example.board.dto.request.user.UpdateNicknameRequestDto;
 import com.example.board.dto.response.ResponseDto;
 import com.example.board.dto.response.user.GetUserResponseDto;
 import com.example.board.entity.UserEntity;
@@ -21,7 +22,7 @@ public class UserServiceImplementation implements UserService{
     @Override
     public ResponseEntity<? super GetUserResponseDto> getUser(String email) {
     
-
+        // 유저 조회
         try {
             // 1. User테이블에서 email에 해당하는 유저 조회
             // select * from user where email = :email
@@ -44,6 +45,32 @@ public class UserServiceImplementation implements UserService{
             return ResponseDto.databaseError();
         } 
 
+    }
+
+    // 유저 닉네임 변경
+    // 잘못된 API > 인증, 인가 작업 필요
+    @Override
+    public ResponseEntity<ResponseDto> patchNickname(UpdateNicknameRequestDto dto) {
+        try{
+
+            String nickname = dto.getNickname();
+            Boolean isExistNickname = userRepository.existsByNickname(nickname);
+            if (isExistNickname) return ResponseDto.duplicateNickname();
+
+            String email = dto.getEmail();
+            UserEntity userEntity = userRepository.findByEmail(email);
+            if (userEntity == null) return ResponseDto.notExistUser();
+
+            userEntity.setNickname(nickname);
+            userRepository.save(userEntity);
+
+            return ResponseDto.success();
+
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return ResponseDto.databaseError();
+        }
+        
     }
 
 }

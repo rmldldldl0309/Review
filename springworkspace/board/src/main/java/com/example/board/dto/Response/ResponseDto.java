@@ -12,11 +12,20 @@ public class ResponseDto {
     private String code;
     private String message;
 
+    // 성공
+    // 응답을 반환하기 때문에 ResponsEntity
+    public static ResponseEntity<ResponseDto> success () {
+        ResponseDto body = new ResponseDto(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
+        return ResponseEntity.status(HttpStatus.OK).body(body);
+    }
+
+    // 500
     public static ResponseEntity<ResponseDto> databaseError () {
         ResponseDto body = new ResponseDto(ResponseCode.DATABASE_ERROR, ResponseMessage.DATABASE_ERROR);
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }
 
+    // 
     public static ResponseEntity<ResponseDto> notExistUser () {
         ResponseDto body = new ResponseDto(ResponseCode.THIS_USER_DOES_NOT_EXIST, ResponseMessage.THIS_USER_DOES_NOT_EXIST);
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(body);
@@ -35,7 +44,7 @@ public class ResponseDto {
         ResponseDto body = new ResponseDto(ResponseCode.DUPLICATE_NICKNAME, ResponseMessage.DUPLICATE_NICKNAME);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
     }
-    public static ResponseEntity<ResponseDto> duplicateTelephoneNumber () {
+    public static ResponseEntity<ResponseDto> duplicateTelNumber () {
         ResponseDto body = new ResponseDto(ResponseCode.DUPLICATE_TELEPHONE_NUMBER, ResponseMessage.DUPLICATE_TELEPHONE_NUMBER);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
     }

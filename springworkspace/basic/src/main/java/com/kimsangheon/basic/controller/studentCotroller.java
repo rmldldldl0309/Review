@@ -22,7 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class studentCotroller {
     
     // 외부에서 주입
-    private final StudentService studentServie;
+    private final StudentService studentService;
 
     // Create
     @PostMapping("/")
@@ -31,16 +31,16 @@ public class studentCotroller {
         // @Valid 추가해야 유효성 검사 작동
         @RequestBody @Valid PostStudentRequestDto requestBody
     ) {
-        ResponseEntity<String> response = studentServie.postStudent(requestBody);
+        ResponseEntity<String> response = studentService.postStudent(requestBody);
         return response;
     }
 
-    // Update
+    // Update       
     @PatchMapping("/")
     public ResponseEntity<String> patchStudent(
         @RequestBody @Valid PatchStudentRequestDto requestBody
     ) {
-        ResponseEntity<String> response = studentServie.patchStudent(requestBody);
+        ResponseEntity<String> response = studentService.patchStudent(requestBody);
         return response;
     }
 
@@ -50,7 +50,7 @@ public class studentCotroller {
         // Path경로의 변수 사용 시
         @PathVariable("studentNumber") Integer studentNumber
     ) {
-        ResponseEntity<String> response = studentServie.deleteStudent(studentNumber);
+        ResponseEntity<String> response = studentService.deleteStudent(studentNumber);
         return response;
     }
 
