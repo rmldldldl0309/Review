@@ -9,6 +9,8 @@ import InputBox from './component/example/InputBox';
 import SignInContainer from './component_manage/example/SignInContainer';
 import ConditionalRedering from './component_manage/ConditionalRendering';
 import ListRendering from './component_manage/ListRendering';
+import EventComponent from './interaction/EventComponent';
+import StatementComponent from './interaction/StatementComponent';
 
 // import Component, { Sample } from './component/Component';
 
@@ -81,11 +83,13 @@ function App() {
       <FunctionComponent/> */}
       {/* <Component/>
       <Sample/> */}
-      <SignInContainer/>
+      {/* <SignInContainer/> */}
       {/* <CurlyBraces/> */}
       {/* <Properties/> */}
       {/* <ConditionalRedering/> */}
       {/* <ListRendering/> */}
+      {/* <EventComponent/> */}
+      <StatementComponent/>
     </>
   );
 }
