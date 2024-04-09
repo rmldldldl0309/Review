@@ -10,7 +10,7 @@ import { setConstantValue } from 'typescript';
 export default function StatementComponent() {
 
     // status 선언
-    // - useState라는 함수로 함수를 선언할 수 있다
+    // - useState라는 함수로 상태를 선언할 수 있다
     // - const [상태변수, 상태변경 함수] = userState<상태변수타입>(초기값);
     
     // let count = 0;
