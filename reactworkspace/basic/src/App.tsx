@@ -11,6 +11,7 @@ import ConditionalRedering from './component_manage/ConditionalRendering';
 import ListRendering from './component_manage/ListRendering';
 import EventComponent from './interaction/EventComponent';
 import StatementComponent from './interaction/StatementComponent';
+import ForwordingStateComponent from './interaction/ForwordingStateComponent';
 
 // import Component, { Sample } from './component/Component';
 
@@ -89,7 +90,8 @@ function App() {
       {/* <ConditionalRedering/> */}
       {/* <ListRendering/> */}
       {/* <EventComponent/> */}
-      <StatementComponent/>
+      {/* <StatementComponent/> */}
+      <ForwordingStateComponent/>
     </>
   );
 }
