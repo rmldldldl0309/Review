@@ -45,10 +45,17 @@
     gap: 14px;
 }
 
-.sns-container-title{
-    color: rgba(138, 146, 166, 1);
-}
-.sns-button-container{
+.authentication-container-title{
     display: flex;
-    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.authentication-button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
 }
