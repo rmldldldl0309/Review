@@ -7,5 +7,7 @@ public interface BasicService {
     // public abstract 생략 가능
     String getHello();
     String getApple();
+
+    String getJwt(String principle);
     
 }

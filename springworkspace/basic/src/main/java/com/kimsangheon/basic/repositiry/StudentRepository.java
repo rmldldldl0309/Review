@@ -69,8 +69,8 @@ public interface StudentRepository extends JpaRepository<StudentEntity, Integer>
         value = 
         // FROM Entitiy명 > @Entity로 지정해 준 이름으로
         // SELECT * = SELECT s  => 이름을 가져온다면 SELECT s.name
-        "SELECT s FROM student s WHERE s.student_number = ?1 AND s.age > ?2",
-        nativeQuery = false
+        "SELECT s FROM student s WHERE s.studentNumber = ?1 AND s.age > ?2",
+        nativeQuery=false
     )
     List<StudentEntity> getStudent2(Integer studentNumber, Integer age);
     
