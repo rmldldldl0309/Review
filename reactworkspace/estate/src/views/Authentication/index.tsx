@@ -87,7 +87,7 @@ function SignIn ({onLinkClickHandler}: Props) {
     )
 }
 
-//                  component                   //
+//                  component                   
 function SignUp ({onLinkClickHandler}: Props) {
 
     //                  state                    // 

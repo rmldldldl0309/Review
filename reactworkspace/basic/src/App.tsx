@@ -12,6 +12,9 @@ import ListRendering from './component_manage/ListRendering';
 import EventComponent from './interaction/EventComponent';
 import StatementComponent from './interaction/StatementComponent';
 import ForwordingStateComponent from './interaction/ForwordingStateComponent';
+import HookComponent1 from './hook/HookComponent1';
+import HookComponent2 from './hook/HookComponent2';
+import CustomHook from './hook/CustomHook';
 
 // import Component, { Sample } from './component/Component';
 
@@ -91,7 +94,10 @@ function App() {
       {/* <ListRendering/> */}
       {/* <EventComponent/> */}
       {/* <StatementComponent/> */}
-      <ForwordingStateComponent/>
+      {/* <ForwordingStateComponent/> */}
+      {/* <HookComponent1/> */}
+      {/* <HookComponent2/> */}
+      <CustomHook/>
     </>
   );
 }
