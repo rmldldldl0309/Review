@@ -59,6 +59,7 @@ public class StudentEntity {
     private Integer age;
     private String address;
     private Boolean graduation;
+    private String password;
 
     // studentServiceImplement 에서 사용하도록 dto생성
     public StudentEntity(PostStudentRequestDto dto) {
@@ -66,5 +67,6 @@ public class StudentEntity {
         this.age = dto.getAge();
         this.address = dto.getAddress();
         this.graduation = dto.getGraduation();
+        this.password = dto.getPassword();
     }
 }
