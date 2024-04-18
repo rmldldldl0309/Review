@@ -20,6 +20,8 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.kimsangheon.basic.filter.JwtAuthenticationFilter;
+import com.kimsangheon.basic.provider.OAuth2SuccessHandler;
+import com.kimsangheon.basic.service.implement.OAuth2UserServiceImplement;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -40,6 +42,8 @@ import lombok.RequiredArgsConstructor;
 public class WebSecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final OAuth2UserServiceImplement oAuthUserServiceImplement;
+    private final OAuth2SuccessHandler oAuth2SuccessHandler;
 
     // @Bean : 
     // - Spring bean으로 등록하는 어노테이션
@@ -89,6 +93,7 @@ public class WebSecurityConfig {
         // - 인증 된 사용자 중 특정 권한을 가지고 있는 사용자만 접근을 허용
         // - 인증된 사용자는 모두 접근을 허용
         .authorizeHttpRequests(request -> request
+            .requestMatchers("/oauth2/**", "/").permitAll()
             // 특정 URL 패턴에 대한 요청은 인증되지 않은 사용자도 접근을 허용
             .requestMatchers(HttpMethod.GET,"/auth/**").permitAll()
             // 특정 URL 패턴에 대한 요청은 지정한 권한을 가지고 있는 사용자만 접근을 허용
@@ -97,10 +102,21 @@ public class WebSecurityConfig {
             // 인증 된 사용자는 모두 접근을 허용
             .anyRequest().authenticated()
         )
+
+        // 8~
+        .oauth2Login(oauth2 -> oauth2
+            // OAuth 인증 서버에서 redirection 하는 URL 지정
+            .redirectionEndpoint(endpoint -> endpoint.baseUri ("/oauth2/callback/*"))
+            // OAuth 인증 서버에서 인증 절차가 끝난 후 사용자에 대한 정보를 처리하는 객체를 지정
+            .userInfoEndpoint(endpoint -> endpoint.userService(oAuthUserServiceImplement))
+            // 인증과정 성공 시
+            .successHandler(oAuth2SuccessHandler)
+        )
         // 인증 과정 중에 발생한 예외 처리
         .exceptionHandling(exceptionHandling -> exceptionHandling
             .authenticationEntryPoint(new FailedAuthorizationEntryPoint())
         );
+        
 
         // 생성한 jwtAuthenticationFuilter를  UsernamePasswordAuthenticationFilter 이전에 등록
         security.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

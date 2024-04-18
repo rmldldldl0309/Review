@@ -91,19 +91,24 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     // 2. 가져온 header에서 `Authorization`필드를 검색
     // 3. 검색한 `Authorization` 값에서 `Bearer `이후의 값을 토큰으로 가져옴
     private String parseBearerToken(HttpServletRequest request) {
-        // 1. request header의 `Authorization`  필드 값을 가져옴
+
+        // 1. request header의 'Authorization' 필드 값을 가져옴
         String authorization = request.getHeader("Authorization");
-        // Authorization 필드의 값의 존재여부 
-        // - null 여부, 빈 문자열 여부,  공백 문자열 여부
+
+        // Authorization 필드의 값이 존재하는지 여부 확인
+        // null여부, 빈 문자열 여부, 공백 문자열 여부 확인
         boolean hasAuthorization = StringUtils.hasText(authorization);
-        if (!hasAuthorization) return null;
+        if (!hasAuthorization)
+            return null;
 
-        // 현재 요청이 Bearer Token Authorization이 맞는지 확인
-        // 문자열의 시작이 `Bearer `로 시작하는지 확인
+        // 현재 요청이 Bearer Token Authentication이 맞는지 확인
+        // 문자열의 시작이 'Bearer '(대문자B~ 띄워쓰기까지 정확히 입력) 로 시작하는지 확인
         boolean isBearer = authorization.startsWith("Bearer ");
-        if (!isBearer) return null;
+        if (!isBearer)
+            return null;
 
-        // 2. `Authorization`필드 값에서 `Bearer `이후의 값을 가져옴
+        // 2. 'Authorization' 필드 값에서 'Bearer ' (<-띄워쓰기 이후의) 이후의 값을 가져옴
+        // Bearer qweasdasdas
         String token = authorization.substring(7);
         return token;
     }
